@@ -36,6 +36,18 @@
       <artifactId>jackson-databind</artifactId>
       <version>2.13.2</version>
     </dependency>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.2.5</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc -->
+    <dependency>
+      <groupId>org.xerial</groupId>
+      <artifactId>sqlite-jdbc</artifactId>
+      <version>3.36.0.3</version>
+    </dependency>
+
 
 
   </dependencies>
@@ -84,5 +96,15 @@
         </plugin>
       </plugins>
     </pluginManagement>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <configuration>
+                  <source>9</source>
+                  <target>9</target>
+              </configuration>
+          </plugin>
+      </plugins>
   </build>
 </project>

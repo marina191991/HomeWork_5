@@ -42,7 +42,7 @@ static void createDataArrayListInFileObject() {
 }
 //метод записывает данные в файл
     static void writerData() throws IOException {
-        try (FileOutputStream fileOutputStream = new FileOutputStream(file);) {
+        try (FileOutputStream fileOutputStream = new FileOutputStream(file)) {
             fileOutputStream.write(header.getBytes(StandardCharsets.UTF_8));
             for (FileObject arr: arrayList) {
                 String string= arr.getVal1()+";"+arr.getVal2()+";"+arr.getVal3()+System.getProperty("line.separator");
@@ -54,11 +54,11 @@ static void createDataArrayListInFileObject() {
         AppData appData = new AppData();
         List<String> list1 = new ArrayList();
 
-        try (BufferedReader fileInputStream = new BufferedReader(new FileReader(file))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
             String count;
-            count = fileInputStream.readLine();
+            count = bufferedReader.readLine();
             appData.setHeader(count.split(";"));
-                      while ((count = fileInputStream.readLine()) != null) {
+                      while ((count = bufferedReader.readLine()) != null) {
                            list1.add(count);
             }
               int columns = list1.get(0).split(";").length;

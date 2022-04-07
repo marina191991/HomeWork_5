@@ -23,6 +23,7 @@ import java.util.*;
 
 public class RapidApiWeather  {
     static String cityVal;
+
     public static String getCityVal () {
         return cityVal;
     }
@@ -81,5 +82,6 @@ public class RapidApiWeather  {
             prop.load(fileInputStream);
 
         }
+
     }
 }
